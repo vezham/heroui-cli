@@ -40,6 +40,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Set up Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
       - name: Publish to npm
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
