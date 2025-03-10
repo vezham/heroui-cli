@@ -2,7 +2,7 @@ import type {SAFE_ANY} from '@helpers/type';
 
 import {Logger} from '@helpers/logger';
 
-import {HEROUI_PREFIX, NEXTUI_PREFIX} from '../../../constants/prefix';
+import {HEROUI_PREFIX, NEXTUI_PREFIX, VEZHAM_PREFIX} from '../../../constants/prefix';
 import {fetchPackageLatestVersion} from '../../https';
 import {safeParseJson} from '../../parse';
 import {getStore, updateAffectedFiles, writeFileAndUpdateStore} from '../../store';
@@ -17,7 +17,10 @@ export function detectIndent(content: string): number {
 }
 
 function filterHeroUiPkgs(pkgs: string[]) {
-  return pkgs.filter((pkg) => pkg.includes(HEROUI_PREFIX) || pkg.includes(NEXTUI_PREFIX));
+  return pkgs.filter(
+    (pkg) =>
+      pkg.includes(HEROUI_PREFIX) || pkg.includes(NEXTUI_PREFIX) || pkg.includes(VEZHAM_PREFIX)
+  );
 }
 
 export async function migrateJson(files: string[]) {

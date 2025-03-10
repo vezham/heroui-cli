@@ -3,7 +3,7 @@ name: sync docs
 on:
   push:
     branches:
-      - main
+      - timeline
     paths:
       - README.md
 
@@ -33,7 +33,7 @@ jobs:
 
       - name: Clone heroui repository
         run: |
-          git clone https://github.com/heroui-inc/heroui-cli heroui --depth 1
+          git clone https://github.com/vezham/heroui-cli heroui --depth 1
 
       - name: Run docs sync script
         run: |

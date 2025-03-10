@@ -1,10 +1,10 @@
 {
-  "name": "heroui-cli",
   "private": false,
+  "name": "@v0xoss/oss-cli",
   "type": "module",
   "license": "MIT",
-  "version": "1.0.0",
-  "homepage": "https://github.com/heroui-inc/heroui-cli#readme",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vezham/heroui-cli#readme",
   "description": "A CLI tool that unlocks seamless HeroUI integration (Previously NextUI CLI)",
   "keywords": [
     "UI",
@@ -16,17 +16,13 @@
     "Add Component",
     "HeroUI"
   ],
-  "author": {
-    "name": "HeroUI",
-    "email": "support@heroui.com",
-    "url": "https://github.com/heroui-inc"
-  },
+  "author": "v0xOSS <oss-developers@vezham.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroui-inc/heroui-cli.git"
+    "url": "https://github.com/vezham/heroui-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/heroui-inc/heroui-cli/issues"
+    "url": "https://github.com/vezham/heroui-cli/issues"
   },
   "publishConfig": {
     "access": "public",
@@ -57,7 +53,12 @@
     "release": "bumpp --execute='pnpm run changelog' --all",
     "prepare": "husky install",
     "postbuild": "pnpm run update:components",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "v:ws:changeset": "changeset",
+    "v:ws:changeset:checklist-release": "bash v/bin/checklist-release/bin/main.sh",
+    "v:ws:changeset:update-versions": "bash v/bin/update-versions/bin/main.sh",
+    "v:ws:git:cleanup-release": "bash v/bin/cleanup-release/bin/main.sh",
+    "v:ws:npm:unpublish": "bash v/bin/npm-unpublish/bin/main.sh"
   },
   "dependencies": {
     "@clack/prompts": "0.7.0",
@@ -74,6 +75,11 @@
     "tar": "6.2.1"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "0.5.0",
+    "@changesets/cli": "2.27.10",
+    "@changesets/get-github-info": "0.6.0",
+    "@changesets/get-release-plan": "4.0.5",
+    "@changesets/types": "6.0.0",
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
     "@types/gradient-string": "1.1.3",
