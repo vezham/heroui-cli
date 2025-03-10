@@ -11,8 +11,8 @@ on:
     branches: [timeline]
     paths:
       - ".github/workflows/release.yml"
-      - ".changeset/**"
-      - "packages/**"
+      # - ".changeset/**"
+      - "src/**"
   workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
       - name: Publish to npm
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          npm version patch -m "Upgrade to %s"
+          npm version patch -m "ci: Upgrade to %s"
           npm publish --provenance --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
