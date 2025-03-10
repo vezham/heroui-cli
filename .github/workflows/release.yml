@@ -2,7 +2,6 @@ name: Release
 
 permissions:
   contents: write
-  pull-requests: write
   id-token: write
 
 on:
@@ -46,24 +45,11 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
 
-      # - name: Publish to npm
-      #   run: |
-      #     npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-      #     npm version patch -m "ci: upgrade to %s"
-      #     npm publish --provenance --access public
-      #   env:
-      #     NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - if: "!contains(github.event.head_commit.message, 'ci: version packages')"
-        name: Create Version PR or Publish to NPM
-        uses: changesets/action@v1
-        with:
-          commit: "ci: version packages"
-          title: "ci: version packages"
-          publish: npm run v:ci:publish-packages
-          version: npm run v:ci:version-packages
+      - name: Publish to npm
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm version patch -m "ci: upgrade to %s"
+          npm publish --provenance --access public
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true

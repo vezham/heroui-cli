@@ -3,7 +3,7 @@
   "name": "@v0xoss/oss-cli",
   "type": "module",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/vezham/heroui-cli#readme",
   "description": "A CLI tool that unlocks seamless HeroUI integration (Previously NextUI CLI)",
   "keywords": [
@@ -55,9 +55,6 @@
     "postbuild": "pnpm run update:components",
     "prepublishOnly": "pnpm run build",
     "v:ws:changeset": "changeset",
-    "v:ci:version-packages": "changeset version",
-    "v:ci:publish-packages": "changeset publish",
-    "v:ci:release": "npm run v:ci:version-packages && npm run v:ci:publish-packages",
     "v:ws:changeset:checklist-release": "bash v/bin/checklist-release/bin/main.sh",
     "v:ws:changeset:update-versions": "bash v/bin/update-versions/bin/main.sh",
     "v:ws:git:cleanup-release": "bash v/bin/cleanup-release/bin/main.sh",
