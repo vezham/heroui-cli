@@ -139,7 +139,7 @@ export async function getLatestVersion(packageName: string): Promise<string> {
 }
 
 const getUnpkgUrl = (version: string) =>
-  `https://unpkg.com/@heroui/react@${version}/dist/components.json`;
+  `https://unpkg.com/@v0xoss/react@${version}/dist/components.json`;
 
 export async function autoUpdateComponents(latestVersion?: string, betaVersion?: string) {
   [latestVersion, betaVersion] = await Promise.all([

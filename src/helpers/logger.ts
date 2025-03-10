@@ -9,7 +9,7 @@ export const defaultColors = ['#F54180', '#338EF7'] as const;
 
 export const gradientString = _gradientString(...defaultColors);
 
-const logPrefix = gradientString('HeroUI CLI:');
+const logPrefix = gradientString('v0xoss CLI:');
 
 export type PrefixLogType = Extract<
   keyof typeof Logger,

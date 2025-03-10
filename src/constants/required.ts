@@ -12,9 +12,9 @@ export const HEROUI_CLI = 'heroui-cli';
 
 export const FRAMER_MOTION = 'framer-motion';
 export const TAILWINDCSS = 'tailwindcss';
-export const HERO_UI = '@heroui/react';
-export const THEME_UI = '@heroui/theme';
-export const SYSTEM_UI = '@heroui/system';
+export const HERO_UI = '@v0xoss/react';
+export const THEME_UI = '@v0xoss/theme';
+export const SYSTEM_UI = '@v0xoss/system';
 export const ALL_COMPONENTS_REQUIRED = [HERO_UI, FRAMER_MOTION] as const;
 
 export const DOCS_INSTALLED = 'https://heroui.com/docs/guide/installation#global-installation';

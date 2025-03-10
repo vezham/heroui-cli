@@ -11,6 +11,6 @@ const PROD_DIR = resolve(fileURLToPath(import.meta.url), '..');
 const PROD = existsSync(join(PROD_DIR, 'components.json'));
 
 export const CACHE_DIR = PROD
-  ? resolve(`${PROD_DIR}/.heroui-cli-cache`)
-  : resolve(join(ROOT, '..'), 'node_modules/.heroui-cli-cache');
+  ? resolve(`${PROD_DIR}/.v0xoss-cli-cache`)
+  : resolve(join(ROOT, '..'), 'node_modules/.v0xoss-cli-cache');
 export const CACHE_PATH = resolve(`${CACHE_DIR}/data.json`);
