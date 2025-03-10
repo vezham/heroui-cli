@@ -1,6 +1,6 @@
 'use strict';
 
-import { relative } from 'path';
+import { relative } from 'node:path';
 
 import { ESLint } from 'eslint';
 
